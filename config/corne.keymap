@@ -22,20 +22,7 @@
    &none   &kp Q       &kp W        &kp E       &kp R       &kp T    &kp Y &kp U       &kp I        &kp O      &kp P        &none
    &none   &mt LGUI A  &mt LALT S   &mt LCTRL D &mt LSHFT F &kp G    &kp H &mt RSHFT J &mt RCTRL K  &mt RALT L &mt RGUI SQT &none
    &none   &kp Z       &kp X        &kp C       &kp V       &kp B    &kp N &kp M       &kp COMMA    &kp DOT    &kp SEMI     &none
-           &kp ESC     &kp SPACE    &kp TAB                                &kp RET     &mo 1 BSPC   &kp DEL
-                        >;
-                };
-                number_layer { // Layer 1
-// -----------------------------------------------------------------------------------------
-// |      |  /  |  7  |  8  |  9  |  -  |   |     |     |     |     |     |      |
-// |      |  *  |  4  |  5  |  6  |  +  |   |LSHFT|LCTRL|LALT |LGUI |     |      |
-// |      |  :  |  1  |  2  |  3  |  =  |   |     |     |     |     |     |      |
-//                    | $   |  0  |  .  |   |     |     |     |
-                        bindings = <
-   &none &kp KP_DIVIDE   &kp KP_N7  &kp _KPN8  &kp KP_N9  &kp KP_MINUS  &none        &none      &none      &none     &none     &none
-   &none &kp KP_MULTIPLY &kp KP_N4  &kp _KPN5  &kp KP_N6  &none         &kp KP_PLUS  &kp RSHFT  &kp RCTRL  &kp RALT  &kp RGUI  &none
-   &none &kp COLON       &kp KP_N1  &kp _KPN2  &kp KP_N3  &kp KP_EQUAL  &none        &none      &none      &none     &none     &none
-         &kp DLLR        &kp KP_N0  &kp KP_DOT                                       &none      &trans     &none
+           &kp ESC     &kp SPACE    &kp TAB                                &kp RET     &kp BSPC   &kp DEL
                         >;
                 };
 
