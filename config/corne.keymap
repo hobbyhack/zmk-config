@@ -47,7 +47,7 @@
                         bindings = <
    &none  &kp CARET  &kp BSLH   &kp PIPE  &kp LBRC   &kp RBRC   &none   &none      &none      &none     &none     &none
    &none  &kp TILDE  &kp HASH   &kp AT    &kp LBKT   &kp RBKT   &none   &kp RSHFT  &kp RCTRL  &kp RALT  &kp RGUI  &none
-   &none &kp COLON       &kp KP_N1  &kp KP_N2  &kp KP_N3  &kp EQUAL     &none  &none      &none      &none     &none     &none
+   &none  &kp GRAVE  &kp PRCNT  &kp AMPS  &kp LT     &kp GT     &none   &none      &none      &none     &none     &none
                                 &kp LPAR  &kp RPAR   &kp UNDER  &trans  &none      &none
                         >;
                 };
