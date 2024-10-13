@@ -32,7 +32,7 @@
 // |      |  :  |  1  |  2  |  3  |  =  |   |     |     |     |     |     |      |
 //                    | $   |  0  |  .  |   |     |     |     |
                         bindings = <
-   &none &kp KP_DIVIDE   &kp KP_N7  &kp _KPN8  &kp KP_N9  &kp KP_MINUS  &none   &none      &none      &none     &none     &none
+   &none &kp KP_DIVIDE   &kp KP_N7  &kp _KPN8  &kp KP_N9  &kp KP_MINUS  &kp T   &kp T      &kp T      &kp T     &kp T     &kp T
    &none &kp KP_MULTIPLY &kp KP_N4  &kp _KPN5  &kp KP_N6  &kp KP_PLUS   &none   &kp RSHFT  &kp RCTRL  &kp RALT  &kp RGUI  &none
    &none &kp COLON       &kp KP_N1  &kp _KPN2  &kp KP_N3  &kp KP_EQUAL  &none   &none      &none      &none     &none     &none
                                     &kp DLLR   &kp KP_N0  &kp KP_DOT    &none   &trans     &none
