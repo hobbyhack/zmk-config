@@ -12,7 +12,7 @@
         keymap {
                 compatible = "zmk,keymap";
 
-                default_layer {
+                default_layer {  // layer 1
 // -----------------------------------------------------------------------------------------
 // |      |  Q  |  W  |  E  |  R  |  T  |   |  Y  |  U   |  I  |  O  |  P  |      |
 // | CTRL |  A  |  S  |  D  |  F  |  G  |   |  H  |  J   |  K  |  L  |  ;  |  '   |
@@ -25,17 +25,17 @@
                   &kp ESC  &kp SPACE  &kp TAB  &kp RET  &lt 1 BSPC  &kp DEL
                         >;
                 };
-                lower_layer {
+                number_layer { // layer 0
 // -----------------------------------------------------------------------------------------
 // |  TAB |  1  |  2  |  3  |  4  |  5  |   |  6  |  7  |  8  |  9  |  0  | BSPC |
 // | BTCLR| BT1 | BT2 | BT3 | BT4 | BT5 |   | LFT | DWN |  UP | RGT |     |      |
 // | SHFT |     |     |     |     |     |   |     |     |     |     |     |      |
 //                    | GUI |     | SPC |   | ENT |     | ALT |
                         bindings = <
-   &kp TAB    &kp N1       &kp N2       &kp N3       &kp N4       &kp N5         &kp N6   &kp N7   &kp N8 &kp N9    &kp N0 &kp BSPC
-   &bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4   &kp LEFT &kp DOWN &kp UP &kp RIGHT &trans &trans
-   &kp LSHFT  &trans       &trans       &trans       &trans       &trans         &trans   &trans   &trans &trans    &trans &trans
-                                    &kp LGUI     &trans       &kp SPACE      &kp RET  &trans   &kp RALT
+   &none &kp KP_DIVIDE   &kp KP_N7  &kp KP_N8  &kp KP_N9  &kp KP_MINUS  &none        &none      &none      &none     &none     &none
+   &none &kp KP_MULTIPLY &kp KP_N4  &kp KP_N5  &kp KP_N6  &none         &kp KP_PLUS  &kp RSHFT  &kp RCTRL  &kp RALT  &kp RGUI  &none
+   &none &kp COLON       &kp KP_N1  &kp KP_N2  &kp KP_N3  &kp KP_EQUAL  &none        &none      &none      &none     &none     &none
+         &kp DLLR        &kp KP_N0  &kp KP_DOT                                       &none      &trans     &none
                         >;
                 };
         };
