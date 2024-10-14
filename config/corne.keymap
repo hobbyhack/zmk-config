@@ -31,6 +31,21 @@
             };
         };
 
+        behaviors {
+            shft_dot: shft_dot {
+                compatible = "zmk,behavior-mod-morph";
+                #binding-cells = <0>;
+                bindings = <&kp DOT>, <&kp EXCL>;
+                mods = <(MOD_LSFT|MOD_RSFT)>;
+            };
+            shft_comma: shft_comma {
+                compatible = "zmk,behavior-mod-morph";
+                #binding-cells = <0>;
+                bindings = <&kp COMMA>, <&kp QMARK>;
+                mods = <(MOD_LSFT|MOD_RSFT)>;
+            };
+        };
+
         keymap {
                 compatible = "zmk,keymap";
 
@@ -43,7 +58,7 @@
                         bindings = <
    &none  &kp Q       &kp W       &kp E          &kp R         &kp T      &kp Y       &kp U        &kp I        &kp O       &kp P         &none
    &none  &mt LGUI A  &mt LALT S  &mt LCTRL D    &mt LSHFT F   &kp G      &kp H       &mt RSHFT J  &mt RCTRL K  &mt RALT L  &mt RGUI SQT  &none
-   &none  &kp Z       &kp X       &kp C          &kp V         &kp B      &kp N       &kp M        &kp COMMA    &kp DOT     &kp SEMI      &none
+   &none  &kp Z       &kp X       &kp C          &kp V         &kp B      &kp N       &kp M        &shft_comma    &shft_dot     &kp SEMI      &none
                       &kp ESC     &lt 4 SPACE    &kp TAB       &lt 2 RET  &lt 1 BSPC  &lt 3 DEL
                         >;
                 };
