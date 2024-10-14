@@ -12,6 +12,8 @@
 / {
         macros {
             desk_left: desk_left {
+                compatible = "zmk,behavior-macro";
+                #binding-cells = <0>;
                 bindings
                     = <&macro_press &kp LCTRL &kp LGUI>
                     , <&macro_tap &kp LEFT>
@@ -19,6 +21,8 @@
                     ;
             };
             desk_right: desk_right {
+                compatible = "zmk,behavior-macro";
+                #binding-cells = <0>;
                 bindings
                     = <&macro_press &kp RCTRL &kp RGUI>
                     , <&macro_tap &kp RIGHT>
@@ -26,7 +30,7 @@
                     ;
             };
         };
-        
+
         keymap {
                 compatible = "zmk,keymap";
 
