@@ -10,27 +10,23 @@
 
 
 / {
-    macros {
-        desk_left: desk_left {
-            bindings
-                = <&macro_press &kp LCTRL &kp LGUI>
-                , <&macro_tap &kp LEFT>
-                , <&macro_release &kp LCTRL &kp LGUI>
-                ;
+        macros {
+            desk_left: desk_left {
+                bindings
+                    = <&macro_press &kp LCTRL &kp LGUI>
+                    , <&macro_tap &kp LEFT>
+                    , <&macro_release &kp LCTRL &kp LGUI>
+                    ;
+            };
+            desk_right: desk_right {
+                bindings
+                    = <&macro_press &kp RCTRL &kp RGUI>
+                    , <&macro_tap &kp RIGHT>
+                    , <&macro_release &kp RCTRL &kp RGUI>
+                    ;
+            };
         };
-        desk_right: desk_right {
-            bindings
-                = <&macro_press &kp RCTRL &kp RGUI>
-                , <&macro_tap &kp RIGHT>
-                , <&macro_release &kp RCTRL &kp RGUI>
-                ;
-        };
-    };
-};
-
-
-
-/ {
+        
         keymap {
                 compatible = "zmk,keymap";
 
