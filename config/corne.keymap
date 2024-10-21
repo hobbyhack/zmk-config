@@ -122,9 +122,9 @@
 //                        |  ESC  |  SPC  |  TAB  |   |     |     |     |
                         bindings = <
    &to 0   &none           &none           &kp RC(FSLH)     &none            &kp RET   &none      &none      &none      &none     &none     &none
-   &none   &mt LGUI RC(A)  &mt LALT RC(S)  &mt LCTRL RC(D)  &mt LSHFT RC(F)  &kp BSPC  &kp RSHFT  &kp RCTRL  &kp RALT   &kp RGUI  &none
+   &none   &mt LGUI RC(A)  &mt LALT RC(S)  &mt LCTRL RC(D)  &mt LSHFT RC(F)  &kp BSPC  &none      &kp RSHFT  &kp RCTRL  &kp RALT  &kp RGUI  &none
    &none   &kp RC(Z)       &kp RC(X)       &kp RC(C)        &kp RC(V)        &kp DEL   &none      &none      &none      &none     &none     &none
-                           &trans          &trans           &trans           &trans    &trans     &trans
+                                           &trans          &trans           &trans           &trans    &trans     &trans
                         >;
                 };
         };
