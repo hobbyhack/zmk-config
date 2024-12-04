@@ -116,10 +116,10 @@
                 };
                 mouse_layer { // layer 5
 // -----------------------------------------------------------------------------------------
-// |  L1  | Cmmt  | GuiW  | GuiE  | GuiR  | Enter |   |     |     |     |     |     |      |
-// |      | CtrlA | CtrlS | CtrlD | CtrlF |  BSPC |   |     |LSHFT|LCTRL|LALT |LGUI |      |
-// |      | CtrlZ | CtrlX | CtrlC | CtrlV |  Del  |   |     |     |     |     |     |      |
-//                        |  ESC  |  SPC  |  TAB  |   |     |     |     |
+// |  L1  | Cmmt  | GuiW  | GuiE  | GuiR  | Enter |   |        |        |     |     |     |      |
+// |      | CtrlA | CtrlS | CtrlD | CtrlF |  BSPC |   |        |  LSHFT |LCTRL|LALT |LGUI |      |
+// |      | CtrlZ | CtrlX | CtrlC | CtrlV |  Del  |   |BT_SEL 0|BT_SEL 1|     |     |     |      |
+//                        |  ESC  |  SPC  |  TAB  |   |        |        |     |
                         bindings = <
    &to 0   &kp RC(FSLH)    &kp RG(W)       &kp RG(E)        &kp RG(R)        &kp RET   &none      &none      &none      &none     &none     &none
    &none   &mt LGUI RC(A)  &mt LALT RC(S)  &mt LCTRL RC(D)  &mt LSHFT RC(F)  &kp BSPC  &none      &kp RSHFT  &kp RCTRL  &kp RALT  &kp RGUI  &none
