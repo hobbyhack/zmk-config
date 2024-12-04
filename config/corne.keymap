@@ -123,7 +123,7 @@
                         bindings = <
    &to 0   &kp RC(FSLH)    &kp RG(W)       &kp RG(E)        &kp RG(R)        &kp RET   &none      &none      &none      &none     &none     &none
    &none   &mt LGUI RC(A)  &mt LALT RC(S)  &mt LCTRL RC(D)  &mt LSHFT RC(F)  &kp BSPC  &none      &kp RSHFT  &kp RCTRL  &kp RALT  &kp RGUI  &none
-   &none   &kp RC(Z)       &kp RC(X)       &kp RC(C)        &kp RC(V)        &kp DEL   &BT_SEL 0      &BT_SEL 1     &none      &none     &none     &none
+   &none   &kp RC(Z)       &kp RC(X)       &kp RC(C)        &kp RC(V)        &kp DEL   &bt BT_SEL 0      &bt BT_SEL 1     &none      &none     &none     &none
                                            &trans           &trans           &trans           &trans    &trans     &trans
                         >;
                 };
