@@ -48,27 +48,28 @@
             hml: hml { // Left Hand Homerow Mods
                 compatible = "zmk,behavior-hold-tap";
                 label = "HML";
-                #binding-cells = ;
-                tapping-term-ms = ; // Explicitly set, matching global from.conf
-                quick-tap-ms = ;    // Explicitly set, matching global from.conf
+                #binding-cells = ;                  // <-- CORRECTED: Added 
+                tapping-term-ms = ;               // <-- CORRECTED: Added 
+                quick-tap-ms = ;                  // <-- CORRECTED: Added 
                 flavor = "balanced";
-                hold-trigger-key-positions = <KEYS_R THUMBS>; // Trigger hold if next key is on right hand or thumb cluster [1]
-                hold-trigger-on-release;                      // Delay positional check until next key release (Requires patch/support in ZMK) [1]
-                require-prior-idle-ms = ;                // Resolve as tap if pressed soon after another key [1]
-                bindings = <&kp>, <&kp>; // Placeholders for hold action (mod), tap action (key)
-            };
-            hmr: hmr { // Right Hand Homerow Mods
+                hold-trigger-key-positions = <KEYS_R THUMBS>;
+                hold-trigger-on-release;
+                require-prior-idle-ms = ;         // <-- CORRECTED: Added 
+                bindings = <&kp>, <&kp>;
+                };
+
+                hmr: hmr { // Right Hand Homerow Mods
                 compatible = "zmk,behavior-hold-tap";
                 label = "HMR";
-                #binding-cells = ;
-                tapping-term-ms = ; // Explicitly set, matching global from.conf
-                quick-tap-ms = ;    // Explicitly set, matching global from.conf
+                #binding-cells = ;                  // <-- CORRECTED: Added 
+                tapping-term-ms = ;               // <-- CORRECTED: Added 
+                quick-tap-ms = ;                  // <-- CORRECTED: Added 
                 flavor = "balanced";
-                hold-trigger-key-positions = <KEYS_L THUMBS>; // Trigger hold if next key is on left hand or thumb cluster [1]
-                hold-trigger-on-release;                      // Delay positional check until next key release (Requires patch/support in ZMK) [1]
-                require-prior-idle-ms = ;                // Resolve as tap if pressed soon after another key [1]
-                bindings = <&kp>, <&kp>; // Placeholders for hold action (mod), tap action (key)
-            };
+                hold-trigger-key-positions = <KEYS_L THUMBS>;
+                hold-trigger-on-release;
+                require-prior-idle-ms = ;         // <-- CORRECTED: Added 
+                bindings = <&kp>, <&kp>;
+                };
         };
 
         keymap {
