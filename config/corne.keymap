@@ -34,13 +34,13 @@
         behaviors {
             shft_dot: shft_dot {
                 compatible = "zmk,behavior-mod-morph";
-                #binding-cells = <0>;
+                #binding-cells = ;
                 bindings = <&kp DOT>, <&kp EXCL>;
                 mods = <(MOD_LSFT|MOD_RSFT)>;
             };
             shft_comma: shft_comma {
                 compatible = "zmk,behavior-mod-morph";
-                #binding-cells = <0>;
+                #binding-cells = ;
                 bindings = <&kp COMMA>, <&kp QMARK>;
                 mods = <(MOD_LSFT|MOD_RSFT)>;
             };
@@ -48,29 +48,25 @@
             hml: hml { // Left Hand Homerow Mods
                 compatible = "zmk,behavior-hold-tap";
                 label = "HML";
-                #binding-cells = ;                  // <-- CORRECTED: Added 
-                tapping-term-ms = ;               // <-- CORRECTED: Added 
-                quick-tap-ms = ;                  // <-- CORRECTED: Added 
-                flavor = "balanced";
+                #binding-cells = ; // Takes 2 arguments: Hold behavior, Tap behavior
+                flavor = "balanced"; // Or your preferred flavor
+                // tapping-term-ms, quick-tap-ms, require-prior-idle-ms are set globally in corne.conf
                 hold-trigger-key-positions = <KEYS_R THUMBS>;
                 hold-trigger-on-release;
-                require-prior-idle-ms = ;         // <-- CORRECTED: Added 
-                bindings = <&kp>, <&kp>;
-                };
+                // bindings = <&kp>, <&kp>; // Default bindings removed for clarity
+            };
 
-                hmr: hmr { // Right Hand Homerow Mods
+            hmr: hmr { // Right Hand Homerow Mods
                 compatible = "zmk,behavior-hold-tap";
                 label = "HMR";
-                #binding-cells = ;                  // <-- CORRECTED: Added 
-                tapping-term-ms = ;               // <-- CORRECTED: Added 
-                quick-tap-ms = ;                  // <-- CORRECTED: Added 
-                flavor = "balanced";
+                #binding-cells = ; // Takes 2 arguments: Hold behavior, Tap behavior
+                flavor = "balanced"; // Or your preferred flavor
+                // tapping-term-ms, quick-tap-ms, require-prior-idle-ms are set globally in corne.conf
                 hold-trigger-key-positions = <KEYS_L THUMBS>;
                 hold-trigger-on-release;
-                require-prior-idle-ms = ;         // <-- CORRECTED: Added 
-                bindings = <&kp>, <&kp>;
-                };
-        };
+                // bindings = <&kp>, <&kp>; // Default bindings removed for clarity
+            };
+        }; // End of behaviors section
 
         keymap {
                 compatible = "zmk,keymap";
