@@ -48,7 +48,7 @@
             hml: hml { // Left Hand Homerow Mods
                 compatible = "zmk,behavior-hold-tap";
                 label = "HML";
-                #binding-cells = ; // Takes 2 arguments: Hold behavior, Tap behavior
+                #binding-cells = <2>; // Takes 2 arguments: Hold behavior, Tap behavior
                 flavor = "balanced"; // Or your preferred flavor
                 // tapping-term-ms, quick-tap-ms, require-prior-idle-ms are set globally in corne.conf
                 hold-trigger-key-positions = <KEYS_R THUMBS>;
@@ -59,7 +59,7 @@
             hmr: hmr { // Right Hand Homerow Mods
                 compatible = "zmk,behavior-hold-tap";
                 label = "HMR";
-                #binding-cells = ; // Takes 2 arguments: Hold behavior, Tap behavior
+                #binding-cells = <2>; // Takes 2 arguments: Hold behavior, Tap behavior
                 flavor = "balanced"; // Or your preferred flavor
                 // tapping-term-ms, quick-tap-ms, require-prior-idle-ms are set globally in corne.conf
                 hold-trigger-key-positions = <KEYS_L THUMBS>;
