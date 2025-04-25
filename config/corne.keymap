@@ -34,13 +34,13 @@
         behaviors {
             shft_dot: shft_dot {
                 compatible = "zmk,behavior-mod-morph";
-                #binding-cells = ;
+                #binding-cells = <0>;
                 bindings = <&kp DOT>, <&kp EXCL>;
                 mods = <(MOD_LSFT|MOD_RSFT)>;
             };
             shft_comma: shft_comma {
                 compatible = "zmk,behavior-mod-morph";
-                #binding-cells = ;
+                #binding-cells = <0>;
                 bindings = <&kp COMMA>, <&kp QMARK>;
                 mods = <(MOD_LSFT|MOD_RSFT)>;
             };
@@ -55,7 +55,6 @@
                 hold-trigger-on-release;
                 // bindings = <&kp>, <&kp>; // Default bindings removed for clarity
             };
-
             hmr: hmr { // Right Hand Homerow Mods
                 compatible = "zmk,behavior-hold-tap";
                 label = "HMR";
