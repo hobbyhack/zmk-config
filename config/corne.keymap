@@ -51,7 +51,7 @@
                 #binding-cells = <2>; // Takes 2 arguments: Hold behavior, Tap behavior
                 flavor = "balanced"; // Or your preferred flavor
                 // tapping-term-ms, quick-tap-ms, require-prior-idle-ms are set globally in corne.conf
-                hold-trigger-key-positions = <KEYS_R THUMBS>;
+                // hold-trigger-key-positions = <KEYS_R THUMBS>;
                 hold-trigger-on-release;
                 // bindings = <&kp>, <&kp>; // Default bindings removed for clarity
             };
@@ -61,11 +61,11 @@
                 #binding-cells = <2>; // Takes 2 arguments: Hold behavior, Tap behavior
                 flavor = "balanced"; // Or your preferred flavor
                 // tapping-term-ms, quick-tap-ms, require-prior-idle-ms are set globally in corne.conf
-                hold-trigger-key-positions = <KEYS_L THUMBS>;
+                // hold-trigger-key-positions = <KEYS_L THUMBS>;
                 hold-trigger-on-release;
                 // bindings = <&kp>, <&kp>; // Default bindings removed for clarity
             };
-        }; // End of behaviors section
+        };
 
         keymap {
                 compatible = "zmk,keymap";
