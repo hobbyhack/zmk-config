@@ -51,9 +51,10 @@
                 #binding-cells = <2>; // Takes 2 arguments: Hold behavior, Tap behavior
                 flavor = "balanced"; // Or your preferred flavor
                 // tapping-term-ms, quick-tap-ms, require-prior-idle-ms are set globally in corne.conf
+                bindings = <&kp>, <&kp>;
                 // hold-trigger-key-positions = <KEYS_R THUMBS>;
+                hold-trigger-key-positions = <21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41>;
                 hold-trigger-on-release;
-                // bindings = <&kp>, <&kp>; // Default bindings removed for clarity
             };
             hmr: hmr { // Right Hand Homerow Mods
                 compatible = "zmk,behavior-hold-tap";
@@ -61,9 +62,11 @@
                 #binding-cells = <2>; // Takes 2 arguments: Hold behavior, Tap behavior
                 flavor = "balanced"; // Or your preferred flavor
                 // tapping-term-ms, quick-tap-ms, require-prior-idle-ms are set globally in corne.conf
+                bindings = <&kp>, <&kp>;
                 // hold-trigger-key-positions = <KEYS_L THUMBS>;
+                hold-trigger-key-positions = <0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20>;
                 hold-trigger-on-release;
-                // bindings = <&kp>, <&kp>; // Default bindings removed for clarity
+                
             };
         };
 
