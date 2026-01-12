@@ -8,124 +8,105 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
 
-
 / {
-        macros {
-            desk_left: desk_left {
-                compatible = "zmk,behavior-macro";
-                #binding-cells = <0>;
-                bindings
-                    = <&macro_press &kp LCTRL &kp LGUI>
-                    , <&macro_tap &kp LEFT>
-                    , <&macro_release &kp LCTRL &kp LGUI>
-                    ;
-            };
-            desk_right: desk_right {
-                compatible = "zmk,behavior-macro";
-                #binding-cells = <0>;
-                bindings
-                    = <&macro_press &kp RCTRL &kp RGUI>
-                    , <&macro_tap &kp RIGHT>
-                    , <&macro_release &kp RCTRL &kp RGUI>
-                    ;
-            };
+    macros {
+        desk_left: desk_left {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_press &kp LCTRL &kp LGUI>
+                , <&macro_tap &kp LEFT>
+                , <&macro_release &kp LCTRL &kp LGUI>
+                ;
+        };
+        desk_right: desk_right {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_press &kp RCTRL &kp RGUI>
+                , <&macro_tap &kp RIGHT>
+                , <&macro_release &kp RCTRL &kp RGUI>
+                ;
+        };
+    };
+
+    behaviors {
+        shft_dot: shft_dot {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp DOT>, <&kp EXCL>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+        shft_comma: shft_comma {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp COMMA>, <&kp QMARK>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+        
+        // This definition is required if you use &caps_word in your keymap
+        caps_word: caps_word {
+            compatible = "zmk,behavior-caps-word";
+            #binding-cells = <0>;
+            continue-list = <UNDERSCORE MINUS BACKSPACE>;
+        };
+    };
+
+    keymap {
+        compatible = "zmk,keymap";
+
+        default_layer { // Layer 0
+            bindings = <
+    &kp LALT   &kp Q  &kp W  &kp E   &kp R   &kp T   &kp Y       &kp U   &kp I       &kp O       &kp P       &kp RALT
+    &kp LSHFT  &kp A  &kp S  &kp D   &kp F   &kp G   &kp H       &kp J   &kp K       &kp L       &kp SQT     &kp RSHFT
+    &kp LCTRL  &kp Z  &kp X  &kp C   &kp V   &kp B   &kp N       &kp M   &shft_comma &shft_dot   &kp SEMI    &kp RCTRL
+                              &lt 5 ESC      &lt 4 SPACE   &kp TAB      &lt 2 RET   &lt 1 BSPC   &lt 3 DEL
+            >;
         };
 
-        behaviors {
-            shft_dot: shft_dot {
-                compatible = "zmk,behavior-mod-morph";
-                #binding-cells = <0>;
-                bindings = <&kp DOT>, <&kp EXCL>;
-                mods = <(MOD_LSFT|MOD_RSFT)>;
-            };
-            shft_comma: shft_comma {
-                compatible = "zmk,behavior-mod-morph";
-                #binding-cells = <0>;
-                bindings = <&kp COMMA>, <&kp QMARK>;
-                mods = <(MOD_LSFT|MOD_RSFT)>;
-            };
+        number_layer { // Layer 1
+            bindings = <
+    &kp LALT  &kp FSLH  &kp N7  &kp N8  &kp N9  &kp MINUS  &none  &none      &none      &none      &none      &kp RALT
+    &kp LSHFT &kp STAR  &kp N4  &kp N5  &kp N6  &kp PLUS   &none  &kp RSHFT  &kp RCTRL  &kp RALT   &kp RGUI   &kp RSHFT
+    &kp LCTRL &kp COLON &kp N1  &kp N2  &kp N3  &kp EQUAL  &none  &none      &none      &none      &none      &kp RCTRL
+                                &kp DLLR  &kp N0  &kp DOT    &none  &trans     &none
+            >;
         };
 
-        keymap {
-                compatible = "zmk,keymap";
-
-                default_layer {  // layer 0
-// -----------------------------------------------------------------------------------------
-// |  ALT   |  Q  |  W  |  E  |  R  |  T  |   |  Y  |  U   |  I  |  O  |  P  |  ALT  |
-// |  CTL   |  A  |  S  |  D  |  F  |  G  |   |  H  |  J   |  K  |  L  |  '  |  CTL  |
-// |  SHFT  |  Z  |  X  |  C  |  V  |  B  |   |  N  |  M   |  ,  |  .  |  ;  | SHFT  |
-//                    | ESC | SPC | TAB |   | ENT | BSPC  | DEL |
-                        bindings = <
-   &kp LALT  &kp Q  &kp W  &kp E   &kp R   &kp T   &kp Y       &kp U   &kp I       &kp O       &kp P       &kp RALT
-   &kp LSHFT  &kp A  &kp S  &kp D   &kp F   &kp G   &kp H       &kp J   &kp K       &kp L       &kp SQT     &kp RSHFT
-   &kp LCTRL  &kp Z  &kp X  &kp C   &kp V   &kp B   &kp N       &kp M   &shft_comma &shft_dot   &kp SEMI    &kp RCTRL
-                      &lt 5 ESC     &lt 4 SPACE   &kp TAB     &lt 2 RET  &lt 1 BSPC  &lt 3 DEL
-                        >;
-                };
-                number_layer { // layer 1
-// -----------------------------------------------------------------------------------------
-// |      |  /  |  7  |  8  |  9  |  -  |   |     |     |     |     |     |      |
-// |      |  *  |  4  |  5  |  6  |  +  |   |     |LSHFT|LCTRL|LALT |LGUI |      |
-// |      |  :  |  1  |  2  |  3  |  =  |   |     |     |     |     |     |      |
-//                    |  $  |  0  |  .  |   | L1  |     |     |
-                        bindings = <
-   &kp LALT &kp FSLH        &kp N7  &kp N8     &kp N9  &kp MINUS  &none  &none      &none      &none     &none     &kp RALT
-   &kp LSHFT &kp STAR        &kp N4  &kp N5     &kp N6  &kp PLUS   &none  &kp RSHFT  &kp RCTRL  &kp RALT  &kp RGUI  &kp RSHFT
-   &kp LCTRL &kp COLON       &kp N1  &kp N2     &kp N3  &kp EQUAL  &none  &none      &none      &none     &none     &kp RCTRL
-                                 &kp DLLR   &kp N0  &kp DOT    &none  &trans     &none
-                        >;
-                };
-                symbol_layer { // layer 2
-// -----------------------------------------------------------------------------------------
-// |      |  ^  |  \  |  |  |  {  |  }  |   |     |     |     |     |     |      |
-// |      |  ~  |  #  |  @  |  [  |  ]  |   |     |LSHFT|LCTRL|LALT |LGUI |      |
-// |      |  `  |  %  |  &  |  <  |  >  |   |     |     |     |     |     |      |
-//                    |  (  |  )  |  _  |   |     | L2  |     |
-                        bindings = <
-   &kp LALT  &kp CARET  &kp BSLH   &kp PIPE  &kp LBRC   &kp RBRC   &none   &none      &none      &none     &none     &kp RALT
-   &kp LSHFT  &kp TILDE  &kp HASH   &kp AT    &kp LBKT   &kp RBKT   &none   &kp RSHFT  &kp RCTRL  &kp RALT  &kp RGUI  &kp RSHFT
-   &kp LCTRL  &kp GRAVE  &kp PRCNT  &kp AMPS  &kp LT     &kp GT     &none   &none      &none      &none     &none     &kp RCTRL
-                                &kp LPAR  &kp RPAR   &kp UNDER  &trans  &none      &none
-                        >;
-                };
-                function_layer { // layer 3
-// -----------------------------------------------------------------------------------------
-// |      | F12 | F7  | F8  | F9  |PSCRN|   |     |     |     |     |     |      |
-// |      | F11 | F4  | F5  | F6  |Scrol|   |     |LSHFT|LCTRL|LALT |LGUI |      |
-// |      | F10 | F1  | F2  | F3  |Pause|   |     |     |     |     |     |      |
-//                    | ESC | SPC | TAB |   |     |     | L3  |
-                        bindings = <
-   &kp LALT  &kp F12  &kp F7  &kp F8  &kp F9   &kp PSCRN        &none   &none      &none      &none     &none     &kp RALT
-   &kp LSHFT  &kp F11  &kp F4  &kp F5  &kp F6   &kp SLCK         &none   &kp RSHFT  &kp RCTRL  &kp RALT  &kp RGUI  &kp RSHFT
-   &kp LCTRL  &kp F10  &kp F1  &kp F2  &kp F3   &kp PAUSE_BREAK  &none   &none      &none      &none     &none     &kp RCTRL
-                           &trans  &trans   &trans           &none   &none      &trans
-                        >;
-                };
-                navigation_layer { // layer 4
-// -----------------------------------------------------------------------------------------
-// |      |     |     |     |     |     |   |Redo |Paste|Copy | Cut |Undo |      |
-// |      |RGUI |RALT |RCTRL|RSHFT|     |   |Caps |Left |Down | Up  |Right|      |
-// |      |     |     |     |     |     |   |Insrt|Home |PgDn |PgUp | End |      |
-//                    |     | L4  |     |   |Enter|BkSpc| Del |
-                        bindings = <
-   &kp LALT   &none     &none     &none      &none      &none   &none       &desk_left   &none           &none        &desk_right  &kp RALT
-   &kp LSHFT   &kp LGUI  &kp LALT  &kp LCTRL  &kp LSHFT  &none   &caps_word  &kp LEFT     &kp DOWN        &kp UP       &kp RIGHT    &kp RSHFT
-   &kp LCTRL   &none     &none     &none      &none      &none   &kp INS     &kp HOME     &kp PG_DN       &kp PG_UP    &kp END      &kp RCTRL
-                               &none      &trans     &none   &trans      &trans       &trans
-                        >;
-                };
-                mouse_layer { // layer 5
-// -----------------------------------------------------------------------------------------
-// |  L1  | Cmmt  | GuiW  | GuiE  | GuiR  | Enter |   |        |        |     |     |     |      |
-// |      | CtrlA | CtrlS | CtrlD | CtrlF |  BSPC |   |        |  LSHFT |LCTRL|LALT |LGUI |      |
-// |      | CtrlZ | CtrlX | CtrlC | CtrlV |  Del  |   |BT_SEL 0|BT_SEL 1|     |     |     |      |
-//                        |  ESC  |  SPC  |  TAB  |   |        |        |     |
-                        bindings = <
-   &kp LALT   &kp RC(FSLH)    &kp RG(W)       &kp RG(E)        &kp RG(R)        &kp RET   &none            &none           &none      &none     &none     &kp RALT
-   &kp LSHFT   &mt LGUI RC(A)  &mt LALT RC(S)  &mt LCTRL RC(D)  &mt LSHFT RC(F)  &kp BSPC  &none            &kp RSHFT       &kp RCTRL  &kp RALT  &kp RGUI  &kp RSHFT
-   &kp LCTRL   &kp RC(Z)       &kp RC(X)       &kp RC(C)        &kp RC(V)        &kp DEL   &bt BT_SEL 0     &bt BT_SEL 1    &none      &none     &none     &kp RCTRL
-                                           &trans           &trans           &trans           &trans    &trans     &trans
-                        >;
-                };
+        symbol_layer { // Layer 2
+            bindings = <
+    &kp LALT  &kp CARET  &kp BSLH   &kp PIPE  &kp LBRC   &kp RBRC   &none   &none      &none      &none      &none      &kp RALT
+    &kp LSHFT &kp TILDE  &kp HASH   &kp AT    &kp LBKT   &kp RBKT   &none   &kp RSHFT  &kp RCTRL  &kp RALT   &kp RGUI   &kp RSHFT
+    &kp LCTRL &kp GRAVE  &kp PRCNT  &kp AMPS  &kp LT     &kp GT     &none   &none      &none      &none      &none      &kp RCTRL
+                                    &kp LPAR  &kp RPAR   &kp UNDER  &trans  &none      &none
+            >;
         };
+
+        function_layer { // Layer 3
+            bindings = <
+    &kp LALT  &kp F12  &kp F7  &kp F8  &kp F9   &kp PSCRN        &none   &none      &none      &none      &none      &kp RALT
+    &kp LSHFT &kp F11  &kp F4  &kp F5  &kp F6   &kp SLCK         &none   &kp RSHFT  &kp RCTRL  &kp RALT   &kp RGUI   &kp RSHFT
+    &kp LCTRL &kp F10  &kp F1  &kp F2  &kp F3   &kp PAUSE_BREAK  &none   &none      &none      &none      &none      &kp RCTRL
+                               &trans  &trans   &trans           &none   &none      &trans
+            >;
+        };
+
+        navigation_layer { // Layer 4
+            bindings = <
+    &kp LALT   &none     &none     &none      &none      &none   &none       &desk_left  &none      &none     &desk_right  &kp RALT
+    &kp LSHFT  &kp LGUI  &kp LALT  &kp LCTRL  &kp LSHFT  &none   &caps_word  &kp LEFT    &kp DOWN   &kp UP    &kp RIGHT    &kp RSHFT
+    &kp LCTRL  &none     &none     &none      &none      &none   &kp INS     &kp HOME    &kp PG_DN  &kp PG_UP &kp END      &kp RCTRL
+                                   &none      &trans     &none   &trans      &trans      &trans
+            >;
+        };
+
+        mouse_layer { // Layer 5
+            bindings = <
+    &kp LALT   &kp RC(FSLH) &kp RG(W)    &kp RG(E)    &kp RG(R)    &kp RET   &none         &none         &none      &none     &none     &kp RALT
+    &kp LSHFT  &kp RC(A)    &kp RC(S)    &kp RC(D)    &kp RC(F)    &kp BSPC  &none         &kp RSHFT     &kp RCTRL  &kp RALT  &kp RGUI  &kp RSHFT
+    &kp LCTRL  &kp RC(Z)    &kp RC(X)    &kp RC(C)    &kp RC(V)    &kp DEL   &bt BT_SEL 0  &bt BT_SEL 1  &none      &none     &none     &kp RCTRL
+                                         &trans       &trans       &trans    &trans        &trans        &trans
+            >;
+        };
+    };
 };
